@@ -1,0 +1,224 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="grass (generated)" id="1666525569262-1">
+        <createTable tableName="order_product_id">
+            <column name="id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-2">
+        <createTable tableName="orders">
+            <column name="order_id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_datetime" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_count" type="INT"/>
+            <column name="order_status" type="VARCHAR(255)"/>
+            <column name="id_link" type="LONGBLOB"/>
+            <column name="id_user" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-3">
+        <createTable tableName="product">
+            <column name="product_id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="count" type="INT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="price" type="INT"/>
+            <column name="id_link" type="LONGBLOB"/>
+            <column name="warehouse_id" type="LONGBLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-4">
+        <createTable tableName="receipt">
+            <column name="receipt_id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_datetime" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="id_user" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="LONGBLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-5">
+        <createTable tableName="users">
+            <column name="id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="role_name" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-6">
+        <createTable tableName="warehouse">
+            <column name="warehouse_id" type="LONGBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="is_closed" type="BIT(1)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="title" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-7">
+        <insert tableName="orders">
+            <column name="order_id" value="[B@7c847072"/>
+            <column name="created_datetime" value="2022-10-22 00:35:29.321000"/>
+            <column name="product_count" valueNumeric="0"/>
+            <column name="order_status" value="ACTIVE"/>
+            <column name="id_link"/>
+            <column name="id_user" value="[B@43d9f1a2"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_id" value="[B@23f86d8a"/>
+            <column name="created_datetime" value="Sat Oct 22 17:47:54 MSK 2022"/>
+            <column name="product_count" valueNumeric="90"/>
+            <column name="order_status" value="ACTIVE"/>
+            <column name="id_link"/>
+            <column name="id_user" value="[B@2264ea32"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_id" value="[B@7d3c09ec"/>
+            <column name="created_datetime" value="Sat Oct 22 00:48:22 MSK 2022"/>
+            <column name="product_count" valueNumeric="4"/>
+            <column name="order_status" value="ACTIVE"/>
+            <column name="id_link"/>
+            <column name="id_user" value="[B@71e4b308"/>
+        </insert>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-8">
+        <insert tableName="product">
+            <column name="product_id" value="[B@14a049f9"/>
+            <column name="category" value="Gun"/>
+            <column name="count" valueNumeric="8"/>
+            <column name="description" value="This is a bbgun can shot your ass"/>
+            <column name="name" value="bbgun"/>
+            <column name="price" valueNumeric="1500"/>
+            <column name="id_link"/>
+            <column name="warehouse_id" value="[B@94e51e8"/>
+        </insert>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-9">
+        <insert tableName="users">
+            <column name="id" value="[B@5a3a1bf9"/>
+            <column name="password" value="$2a$10$ppDZX6Of5jHSz9J.iolS6urSYyNjhEcuTOfxVMY9vL9S5Q9pPuZvS"/>
+            <column name="role_name" value="USER"/>
+            <column name="user_name" value="linlin"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="[B@2100d047"/>
+            <column name="password" value="$2a$10$XxFSaEMmYyQe8ga1U9smkO3adGYpS3Mq/N9ward6E960S78vFq7Ji"/>
+            <column name="role_name" value="USER"/>
+            <column name="user_name" value="boyer"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="[B@4af45442"/>
+            <column name="password" value="$2a$10$o1tTtKB5/D83US4FglJSCevTYbt76q/n1p9hT4ySaLCfo94wvYK0."/>
+            <column name="role_name" value="ADMIN"/>
+            <column name="user_name" value="ADMIN"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="[B@1d805aa1"/>
+            <column name="password" value="$2a$10$1WFxUtvC1EESyDPcl9S6XuSFb8WUcjonO2iNx8B5DXeseBF2zy0MK"/>
+            <column name="role_name" value="USER"/>
+            <column name="user_name" value="henrry"/>
+        </insert>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-10">
+        <insert tableName="warehouse">
+            <column name="warehouse_id" value="[B@30ca0779"/>
+            <column name="address"/>
+            <column name="is_closed" valueBoolean="false"/>
+            <column name="name"/>
+            <column name="title"/>
+        </insert>
+        <insert tableName="warehouse">
+            <column name="warehouse_id" value="[B@2bc426f0"/>
+            <column name="address" value="Minsk,abcd university number 123"/>
+            <column name="is_closed" valueBoolean="false"/>
+            <column name="name" value="boyerShop"/>
+            <column name="title" value="This is a gun shop"/>
+        </insert>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-11">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="order_product_id"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-12">
+        <addPrimaryKey columnNames="order_id" constraintName="PRIMARY" tableName="orders"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-13">
+        <addPrimaryKey columnNames="product_id" constraintName="PRIMARY" tableName="product"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-14">
+        <addPrimaryKey columnNames="receipt_id" constraintName="PRIMARY" tableName="receipt"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-15">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="users"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-16">
+        <addPrimaryKey columnNames="warehouse_id" constraintName="PRIMARY" tableName="warehouse"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-17">
+        <createIndex indexName="FK24xvco2ejdnth22kj3wdfex4r" tableName="receipt">
+            <column name="id_user"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-18">
+        <createIndex indexName="FK81492ys17wy2lo7vbuhv8ln9v" tableName="orders">
+            <column name="id_link"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-19">
+        <createIndex indexName="FKk6edvfdkq61mjhltx856ncs3x" tableName="product">
+            <column name="warehouse_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-20">
+        <createIndex indexName="FKnei5o03oe56cqw7ba111kpakc" tableName="product">
+            <column name="id_link"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-21">
+        <createIndex indexName="FKo8fi6dx59tstuoahtrp0dpnom" tableName="receipt">
+            <column name="order_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-22">
+        <createIndex indexName="FKtb6jdc061vu6ydv1445lrigtb" tableName="orders">
+            <column name="id_user"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-23">
+        <addForeignKeyConstraint baseColumnNames="id_user" baseTableName="receipt" constraintName="FK24xvco2ejdnth22kj3wdfex4r" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-24">
+        <addForeignKeyConstraint baseColumnNames="id_link" baseTableName="orders" constraintName="FK81492ys17wy2lo7vbuhv8ln9v" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="order_product_id"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-25">
+        <addForeignKeyConstraint baseColumnNames="warehouse_id" baseTableName="product" constraintName="FKk6edvfdkq61mjhltx856ncs3x" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="warehouse_id" referencedTableName="warehouse"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-26">
+        <addForeignKeyConstraint baseColumnNames="id_link" baseTableName="product" constraintName="FKnei5o03oe56cqw7ba111kpakc" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="order_product_id"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-27">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="receipt" constraintName="FKo8fi6dx59tstuoahtrp0dpnom" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="order_id" referencedTableName="orders"/>
+    </changeSet>
+    <changeSet author="grass (generated)" id="1666525569262-28">
+        <addForeignKeyConstraint baseColumnNames="id_user" baseTableName="orders" constraintName="FKtb6jdc061vu6ydv1445lrigtb" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+</databaseChangeLog>

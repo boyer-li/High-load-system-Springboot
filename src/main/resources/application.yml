@@ -1,0 +1,27 @@
+spring:
+    datasource:
+        #    url: jdbc:mysql://47.109.46.94/ordering_system
+        url: jdbc:mysql://localhost:3306/lab1_ordering_system
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        #    username: linlin
+        username: root
+        password: root
+    data:
+            web:
+                pageable:
+                    default-page-size: 50
+#    liquibase:
+#        change-log: classpath:db/changelog/db.changelog-master.xml
+#        enabled: false
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+
+
+jwt:
+    secret: "SS1GVUNLSU5HLUxPVkUtU1BSSU5HLUFORC1IT1ctSVQtSVMtTElURVJBTExZLU1BR0lDQUxMWS1XT1JLUy1BTkQtRkFJTFMtV0lUSC1DUllQVElELUVYQ0VQVElPTlM="
+    expiration: 3600000
